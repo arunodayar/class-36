@@ -26,4 +26,13 @@ class Player {
       distance:this.distance
     });
   }
+
+  static getPlayerinfo(){
+    var playerInforef=database.ref("players")
+    playerInforef.on("value",(data)=>{
+      allPlayers=data.val();
+    })
+  }
+
 }
+
